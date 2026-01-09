@@ -30,7 +30,7 @@
 // This means 31 - 12 = 19 bits to the left of the binary point
 // and 12 bits to the right
 // 1 signed bit obv
-#define Q_FIXEDPOINT (10)
+#define Q_FIXEDPOINT (8)
 #define TOFIXEDPOINT(x) ((int32_t)(((double)(x)) * (1 << Q_FIXEDPOINT)))
 #define F_FROMFIXEDPOINT(x) (((float)(x)) / (float)(1 << Q_FIXEDPOINT))
 #define I_FROMFIXEDPOINT(x) ((x) / (1 << Q_FIXEDPOINT))
@@ -74,7 +74,7 @@ private:
     volatile int32_t angle_ = 0;
     int32_t thetaPre_ = 0;
     uint16_t tHigh_ = 0, tLow_ = 0;
-    uint16_t rise_ = 0, fall_ = 0;
+    unsigned long rise_ = 0, fall_ = 0;
     int32_t turns_ = 0;
     int32_t errorIntegral_ = 0;
     int32_t errorAngle_ = 0;
